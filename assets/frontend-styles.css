@@ -1,0 +1,4 @@
+/* Discount Price Style */
+ins::after {
+	content: ' Discount Price';
+}
