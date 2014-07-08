@@ -33,8 +33,9 @@ class BCIT_Custom_Role{
 		add_action( 'admin_notices', array( $this, 'check_required_plugins') );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue') );
 
+		// My pre_get_posts is not funtioning correctly
+		//add_action( 'pre_get_posts', array( $this, 'limit_our_posts' ) ); 
 
-		add_action( 'pre_get_posts', array( $this, 'limit_our_posts' ) ); 
 		// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
 		register_activation_hook(__FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook(__FILE__, array( $this, 'deactivate') );

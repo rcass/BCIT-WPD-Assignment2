@@ -18,9 +18,51 @@ class BCIT_Assign_Purchase_Meta{
 		 // Get constant
 	    add_action( 'load-post', array( $this, 'get_permitted_users' ) );
 
+	    // Another attempt at pre_get_posts
+	    // add_action( 'pre_get_posts', array( $this, 'custom_user_posts_query_modifier' ) );
+
 	   
 	} // __construct
 
+	// /**
+	//	* Filter out Posts with meta value set
+	//  *
+	//  * @uses    add_meta_box
+	//  *
+	//  * @since   1.0
+	//  * @author  Rose Cass
+	//  */
+	//   public function custom_user_posts_query_modifier( $query ){
+
+	//     // if logged in
+	//     // has assigned products
+	//     if( is_user_logged_in() && $query->is_main_query()  ) {
+
+	//       $meta_query = $query->get('meta_query');
+
+	//       //Add our meta query to the original meta queries
+	//       // Default 'compare' operator is '='
+	//       $meta_query = array(
+
+	//                       array(
+	//                           'key'       => '_bcit_assign_user',
+	//                           'value'     => array(0),
+	//                           //'compare'   => 'NOT EXISTS',
+	//                         ),
+
+	//                       );
+	//       $query->set( 'meta_query', $meta_query );
+
+	//       return $query;
+	//     }
+
+	//   } // custom_user_posts_query_modifier()
+
+	  // public function get_permitted_users(){
+
+	  //   $permitted_users = get_users( array( 'role' => 'bulk_purchaser' ) );
+	  //   return $permitted_users;
+	  // } //get_permitted_users()
 	
 	/**
 	 * Adds our actions so that we can start the build out of the post metaboxes
